@@ -1,23 +1,27 @@
 function doubleNumbers(arr) {
   // your code here
+  return arr.map((x) => x * 2);
 }
 
 console.log(doubleNumbers([2, 5, 100])); // [4, 10, 200]
 
 function stringItUp(arr) {
   // your code here
+    return arr.map((x) => x.toString());
 }
 
 console.log(stringItUp([2, 5, 100])); // ["2", "5", "100"]
 
 function capitalizeNames(arr) {
   // your code here
+  return arr.map((name) => name.charAt(0).toUpperCase() + name.slice(1).toLowerCase());
 }
 
 console.log(capitalizeNames(["john", "JACOB", "jinGleHeimer", "schmidt"])); // ["John", "Jacob", "Jingleheimer", "Schmidt"]
 
 function namesOnly(arr) {
   // your code here
+  return arr.map((person) => person.name);
 }
 
 console.log(
@@ -48,6 +52,13 @@ console.log(
 
 function makeStrings(arr) {
   // your code here
+  return arr.map((person) => {
+    if (person.age >= 18) {
+      return person.name + " can go to The Matrix";
+    } else {
+      return person.name + " is under age!!";
+    }
+  });
 }
 
 console.log(
@@ -81,8 +92,11 @@ console.log(
 // "Bob Ziroll can go to The Matrix"]
 
 function readyToPutInTheDOM(arr) {
-  // your code here
+  return arr.map((arrObj) => {
+    return "<h1>" + arrObj.name + "</h1><h2>" + arrObj.age + "</h2>";
+  });
 }
+
 console.log(
   readyToPutInTheDOM([
     {
@@ -104,7 +118,7 @@ console.log(
     {
       name: "Bob Ziroll",
       age: 100,
-    },
+    }
   ])
 );
 // ["<h1>Angelina Jolie</h1><h2>80</h2>",
